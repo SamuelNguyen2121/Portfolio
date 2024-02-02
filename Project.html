@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Project</title>
+    <link rel="stylesheet" type="text/css" href="portfolio.css">
+    <meta charset="UTF-8">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html" data-translate="home_nav">Home</a></li>
+            <li><a href="Project.html" data-translate="projects_nav">Projects</a></li>
+            <li><a href="Work_School.html" data-translate="work_school_nav">Work and School</a></li>
+            <li><a href="Resume.html" data-translate="resume_nav">Resume</a></li>
+            <li>
+                <select id="languageSwitcher" onchange="switchLanguage(this.value)">
+                    <option value="en">English</option>
+                    <option value="fr">Français</option>
+                </select>
+            </li>
+        </ul>
+    </nav>
+
+    <h1 class="main-heading" data-translate="projects_nav">Projects</h1>
+
+    <div class="project-section">
+        <h2 class="project-title" data-translate="ecp_title">Car Parts Web Application</h2>
+        <p>09/2023 - 02/2024 (Final Project 1 and 2)</p>
+        <h3>Description</h3>
+        <p data-translate="ecp_description">
+            The ECP (External Client Project) was the computer science program's final project where my teammates and I created a web application for a client who wanted 
+            people to be able to buy car parts online. The website also allowed the admin to manage the products and registered
+            users information. The project was divided into sprints of around two weeks, where each team member had at least one
+            feature assigned to him to implement. We applied collaborative programming with Git, system design with multiple
+            types of diagrams, development planning with Jira, and finally system design with Figma.
+        </p>
+        <div class="accordion">
+            <button class="accordion-button" data-translate="languages">Languages and Frameworks</button>
+            <div class="panel">
+                <ul>
+                    <li>Java</li>
+                    <li>React JS</li>
+                    <li>Spring</li>
+                </ul>
+            </div>
+        </div>
+
+        <br>
+        
+        <div class="accordion">
+            <button class="accordion-button" data-translate="softwares">Softwares</button>
+            <div class="panel">
+                <ul>
+                    <li>IntelliJ</li>
+                    <li>Git</li>
+                    <li>Docker</li>
+                    <li>Postman</li>
+                    <li>Jira</li>
+                    <li>Figma</li>
+                    <li>GitHub</li>
+                </ul>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="accordion">
+            <button class="accordion-button" data-translate="diagrams">Diagrams</button>
+            <div class="panel">
+                <ul>
+                    <li>C4 Diagrams</li>
+                    <li>Use Case Diagram</li>
+                    <li>Class Diagram</li>
+                    <li>Sequence Diagram</li>
+                </ul>
+            </div>
+        </div>
+
+
+        <h3>Images</h3>
+        <div class="image-gallery">
+            <img src="images\CWCP_Home.png" alt="Image 1" onclick="openModal('myModal1');currentSlide(1, 'slide1')">
+            <img src="images\CWCP_Products.png" alt="Image 2" onclick="openModal('myModal1');currentSlide(2, 'slide1')">
+            <img src="images\CWCP_Product_Details.png" alt="Image 2" onclick="openModal('myModal1');currentSlide(3, 'slide1')">
+            <img src="images\CWCP_Admin_Products.png" alt="Image 2" onclick="openModal('myModal1');currentSlide(4, 'slide1')">
+            <img src="images\CWCP_Admin_Product_Details.png" alt="Image 2" onclick="openModal('myModal1');currentSlide(5, 'slide1')">
+        </div>
+
+        <div id="myModal1" class="modal">
+            <span class="close cursor" onclick="closeModal('myModal1')">&times;</span>
+            <div class="modal-content" id="slide1">
+                <div class="mySlides">
+                    <img src="images\CWCP_Home.png" style="width:100%">
+                </div>
+                <div class="mySlides">
+                    <img src="images\CWCP_Products.png" style="width:100%">
+                </div>
+                <div class="mySlides">
+                    <img src="images\CWCP_Product_Details.png" style="width:100%">
+                </div>
+                <div class="mySlides">
+                    <img src="images\CWCP_Admin_Products.png" style="width:100%">
+                </div>
+                <div class="mySlides">
+                    <img src="images\CWCP_Admin_Product_Details.png" style="width:100%">
+                </div>
+                <a class="prev" onclick="plusSlides(-1, 'slide1')">&#10094;</a>
+                <a class="next" onclick="plusSlides(1, 'slide1')">&#10095;</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="project-section">
+        <h2 class="project-title" data-translate="pet_title">Pet Clinic Web Application</h2>
+        <p>09/2023 - 10/2023 (Final Project 1)</p>
+        <h3>Description</h3>
+        <p data-translate="pet_description">
+            The project involved adding features to an existing web application. The class was divided into groups for each
+            part of the app, where I was assigned to the authentication team. During the development of the program, my
+            teammates and I were tasked to each implement at least one feature during each of our two sprints. We put into practice
+            development planning with Jira and were introduced to collaborative programming with Git.
+        </p>
+        <div class="accordion">
+            <button class="accordion-button" data-translate="languages">Languages and Frameworks</button>
+            <div class="panel">
+                <ul>
+                    <li>Java</li>
+                    <li>Angular JS</li>
+                    <li>Spring</li>
+                </ul>
+            </div>
+        </div>
+
+        <br>
+        
+        <div class="accordion">
+            <button class="accordion-button" data-translate="softwares">Softwares</button>
+            <div class="panel">
+                <ul>
+                    <li>IntelliJ</li>
+                    <li>Git</li>
+                    <li>Docker</li>
+                    <li>Postman</li>
+                    <li>Jira</li>
+                    <li>GitHub</li>
+                </ul>
+            </div>
+        </div>
+
+
+        <h3>Images</h3>
+        <div class="image-gallery">
+            <img src="images\Pet_Users.png" alt="Image 1" onclick="openModal('myModal2');currentSlide(1, 'slide2')">
+            <img src="images\Pet_Roles.png" alt="Image 2" onclick="openModal('myModal2');currentSlide(2, 'slide2')">
+        </div>
+
+        <div id="myModal2" class="modal">
+            <span class="close cursor" onclick="closeModal('myModal2')">&times;</span>
+            <div class="modal-content" id="slide2">
+                <div class="mySlides">
+                    <img src="images\Pet_Users.png" style="width:100%">
+                </div>
+                <div class="mySlides">
+                    <img src="images\Pet_Roles.png" style="width:100%">
+                </div>
+                <a class="prev" onclick="plusSlides(-1, 'slide2')">&#10094;</a>
+                <a class="next" onclick="plusSlides(1, 'slide2')">&#10095;</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="portfolio.js"></script>
+</body>
+</html>
