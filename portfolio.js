@@ -1,10 +1,28 @@
 function openModal(modalId) {
-    document.getElementById(modalId).style.display = "block";
+    let modal = document.getElementById(modalId);
+    modal.style.display = "block";
+    setTimeout(() => {
+        modal.style.opacity = 1;
+    }, 10);
+    document.body.classList.add("no-scroll");
+
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            closeModal(modalId);
+        }
+    }
 }
 
+
 function closeModal(modalId) {
-    document.getElementById(modalId).style.display = "none";
+    let modal = document.getElementById(modalId);
+    modal.style.opacity = 0;
+    setTimeout(() => {
+        modal.style.display = "none";
+    }, 500);
+    document.body.classList.remove("no-scroll");
 }
+
 
 function plusSlides(n, slideId) {
     showSlides(slideIndex[slideId] += n, slideId);
@@ -20,13 +38,22 @@ function showSlides(n, slideId) {
     let i;
     let slides = document.getElementById(slideId).getElementsByClassName("mySlides");
     if (!slideIndex[slideId]) slideIndex[slideId] = 1;
-    if (n > slides.length) { slideIndex[slideId] = 1 }
-    if (n < 1) { slideIndex[slideId] = slides.length }
+    if (n > slides.length) { slideIndex[slideId] = 1; }
+    if (n < 1) { slideIndex[slideId] = slides.length; }
     for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
+        slides[i].style.opacity = 0;
     }
-    slides[slideIndex[slideId] - 1].style.display = "block";
+    setTimeout(() => {
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slides[slideIndex[slideId] - 1].style.display = "block";
+        setTimeout(() => {
+            slides[slideIndex[slideId] - 1].style.opacity = 1;
+        }, 10);
+    }, 500);
 }
+
 
 
 var acc = document.getElementsByClassName("accordion-button");
@@ -36,11 +63,11 @@ for (i = 0; i < acc.length; i++) {
     acc[i].addEventListener("click", function() {
         this.classList.toggle("active");
         var panel = this.nextElementSibling;
-        if (panel.style.display === "block") {
-            panel.style.display = "none";
+        if (panel.style.maxHeight){
+            panel.style.maxHeight = null;
         } else {
-            panel.style.display = "block";
-        }
+            panel.style.maxHeight = panel.scrollHeight + "px";
+        } 
     });
 }
 
@@ -69,10 +96,15 @@ const translations = {
         "teamwork": "Teamwork",
         "present": "06/2021 - Present (Costco Wholesale Brossard)",
         "connect": "Connect with me:",
+        "education": "Educaion",
+        "dec": "College/CEGEP: DEC in Computer Science and Technology (In Progress)",
+        "cegep": "College Champlain, Saint-Lambert (2020 - Present)",
+        "des": "High School: DES (Acquired)",
+        "hs": "College Jean de la Mennais, La Prairie (2015 - 2020)",
     },
     fr: {
         "about_title": "À propos de moi",
-        "about_txt": "Je suis étudiant en troisième année en informatique au Collège Champlain à Saint-Lambert. De plus, je travaille actuellement chez Costco Wholesale à Brossard depuis 2021 en tant qu'aide caissier. Mes principaux intérêts dans la vie sont voyager, le sport, les voitures et la musique, mais je suis toujours ouvert à d'autres choses.",
+        "about_txt": "Je suis étudiant de troisième année en informatique au Collège Champlain à Saint-Lambert. De plus, je travaille actuellement chez Costco Wholesale à Brossard depuis 2021 en tant qu'aide caissier. Mes principaux intérêts dans la vie sont voyager, le sport, les voitures et la musique, mais je suis toujours ouvert à d'autres choses.",
         "table_title": "Ce que j'apporte",
         "table_txt": "Je suis une personne persévérante qui cherche toujours à faire un meilleur travail en s'améliorier avec les commentaires de mon entourages. Par example, j'ai l'habileté de m'adapter à différents environments de travail. La transition du secondaire au cégep m'a amené à développer la capacité d'adaptation puisque les cours devenaient plus exigeants. De plus, je crois que ma persévérence jouera un rôle important dans le développement de mes compétences personnelles. Au cours de mon emploi d'été des dernières années chez Costco, le service à la clientèle étant mon travail principal m'a aidé à développer et à améliorer mes compétences en communication et à apprendre à être patient. De plus, lorsque l'on me confiait des tâches individuelles, j'ai appris à travailler de manière autonome mais en même temps en équipe lorsque d'autres personnes avaient besoin d'aide. Finalement, changer de département au cours de mes années chez Costco m'a aidé à développer mes compétences d'adaptation.",
         "home_nav": "Accueil",
@@ -93,6 +125,11 @@ const translations = {
         "teamwork": "Travail d'équipe",
         "present": "06/2021 - Présent (Costco Wholesale Brossard)",
         "connect": "Connecte avec moi:",
+        "education": "Éducation",
+        "dec": "Collège/CEGEP: DEC en Informatique (En Progrès)",
+        "cegep": "Collège Champlain, Saint-Lambert (2020 - Présent)",
+        "des": "High School: DES (Acquis)",
+        "hs": "Collège Jean de la Mennais, La Prairie (2015 - 2020)",
     }
 };
 

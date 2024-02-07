@@ -156,7 +156,7 @@ body {
 .modal {
     display: none;
     position: fixed;
-    z-index: 1;
+    z-index: 1001;
     padding-top: 100px;
     left: 0;
     top: 0;
@@ -165,6 +165,8 @@ body {
     overflow: auto;
     background-color: black;
     background-color: rgba(0,0,0,0.9);
+    opacity: 0;
+    transition: opacity 0.5s ease;
 }
 
 .modal-content {
@@ -172,6 +174,14 @@ body {
     margin: auto;
     width: 80%;
     max-width: 700px;
+}
+
+.modal-trigger {
+    transition: transform 0.3s ease;
+}
+
+.modal-trigger:hover {
+    transform: scale(1.05);
 }
 
 .close {
@@ -209,6 +219,16 @@ body {
     background-color: rgba(0,0,0,0.8);
 }
 
+.no-scroll {
+    overflow: hidden;
+}
+
+.mySlides {
+    opacity: 0;
+    display: none;
+    transition: opacity 0.5s ease;
+}
+
 .accordion-button {
     background-color: #eee;
     color: #444;
@@ -236,10 +256,10 @@ body {
 }
 
 .panel {
-    padding: 0 18px;
-    display: none;
-    background-color: white;
+    max-height: 0;
     overflow: hidden;
+    transition: max-height 0.5s ease-out;
+    background-color: white;
 }
 
 .centered-container {
