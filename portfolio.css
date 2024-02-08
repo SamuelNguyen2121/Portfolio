@@ -318,4 +318,10 @@ body {
         height: auto;
         margin: 0 auto;
     }
+
+    .project-section {
+        margin: 10px;
+        padding: 20px;
+        box-sizing: border-box;
+    }
 }
