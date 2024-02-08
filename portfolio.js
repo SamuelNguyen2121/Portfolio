@@ -96,7 +96,7 @@ const translations = {
         "teamwork": "Teamwork",
         "present": "06/2021 - Present (Costco Wholesale Brossard)",
         "connect": "Connect with me:",
-        "education": "Educaion",
+        "education": "Education",
         "dec": "College/CEGEP: DEC in Computer Science and Technology (In Progress)",
         "cegep": "College Champlain, Saint-Lambert (2020 - Present)",
         "des": "High School: DES (Acquired)",
